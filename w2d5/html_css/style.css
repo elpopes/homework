@@ -1,0 +1,40 @@
+.descendant_selector p {
+  background-color: cornflowerblue;
+}
+
+.child-selector > p {
+  background-color: red;
+}
+
+h1 ~ p {
+  background-color: blue;
+}
+
+div#green {
+  background-color: chartreuse;
+}
+
+h2.highlight {
+  background-color: black;
+}
+
+h2 .highlight {
+  background-color: brown;
+}
+
+h2 ~ .highlight {
+  background-color: blueviolet;
+}
+
+h2 {
+  background-color: aqua;
+}
+
+.box_model {
+  width: 300px;
+  height: 100px;
+  padding: 100px;
+  margin: 100px;
+  border: 2px dotted black;
+  background: pink;
+}

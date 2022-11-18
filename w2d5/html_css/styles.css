@@ -1,0 +1,45 @@
+* {
+  background-position-x: center;
+}
+
+p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 100;
+  color: blue;
+}
+
+p span {
+  font-weight: bold;
+  font-style: italic;
+  font-size: smaller;
+  color: black;
+}
+
+p span.highlight {
+  color: green;
+}
+
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 28px;
+  font-stretch: ultra-expanded;
+}
+
+ul a {
+  text-decoration: solid;
+}
+ul > a {
+  text-decoration: blueviolet; /*this doesn't work because of child selector? */
+}
+
+ul > li > a {
+  font-weight: bolder;
+}
+
+.someclassname {
+  text-indent: 100px;
+}
+
+#andid {
+  text-indent: 0px;
+}
