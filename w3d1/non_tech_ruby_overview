@@ -1,0 +1,9 @@
+def erroneous_addition(x)
+    if x > 99999
+        print "i am valid as a statement"
+    else
+        print "ruby interpreter complains #{x}"
+    end
+end
+
+erroneous_addition(Float::INFINITY)
