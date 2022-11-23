@@ -1,0 +1,27 @@
+def sum_to(s)
+    return s if s.between?(0,1)
+    return nil if s < 0
+    s + sum_to(s-1)
+end
+
+def add_numbers(num_array)
+    return num_array[0] if num_array.length < 2
+    num_array.pop + add_numbers(num_array)
+end
+
+def gamma_fnc(n)
+    return nil if n == 0
+    return 1 if n == 1
+    (n - 1) * gamma_fnc(n-1) 
+end
+
+def ice_cream_shop(flavors, favorite)
+    return false if flavors.empty? 
+    return true if flavors.pop == favorite 
+    ice_cream_shop(flavors, favorite)
+end
+
+def reverse(string)
+    return string if string.length < 2
+    string[-1] + reverse(string[0...-1])
+end
