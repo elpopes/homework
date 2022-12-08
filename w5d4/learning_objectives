@@ -1,0 +1,33 @@
+SQL
+
+    Given a database and a series of tables demonstrate the ability to return data from the given database by writing SQL query statements.
+    Demonstrate how to use aggregates within a SQL query to aggregate data from rows and columns.
+    Demonstrate how to join three separate tables using a JOIN table by joining on a column.
+    Demonstrate how to solve more complicated problems using a SELF JOIN to extract multiple types of information from the same table.
+    Know the basic Postgres commands to interact with the Postgres API via your terminal.
+
+Migrations
+
+    Given a resource, demonstrate how to create a new table in Rails.
+    Identify the file that will show you the effect of all the migrations that have been run so far.
+    Identify the proper way to change the schema of a Rails application.
+    Given an existing Rails project, demonstrate how to change a column in a given table.
+    Given an existing Rails project, demonstrate how to add columns, indexes, and foreign key constraints to a given table.
+
+Associations
+
+    Identify the role of associations in a Rails model.
+    Given a Rails project with two associated models, write belongs_to and has_many associations relating the two.
+    Identify which Rails model gets the belongs_to association.
+    Demonstrate knowledge of which variables to refer to for the primary_key, foreign_key, and class_name for each association.
+    Given a Rails project with models and a has_many or belongs_to association, write a has_many :through association to access data through another model.
+    Identify the differences between a has_many :through and a has_one association.
+    Demonstrate when it is appropriate to add options such as dependent: :destroy and optional: true to an association.
+
+Active Record queries
+
+    Given a Rails project, demonstrate how to write methods utilizing complex Active Record queries.
+    Use aggregates with Active Record.
+    Write Active Record queries using multiple where statements.
+    Write Active Record queries using group with columns defined in select.
+    Use the pluck method with Active Record to return ids.
