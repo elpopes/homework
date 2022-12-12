@@ -1,0 +1,44 @@
+/* respects rules of height and width */
+/* will take up the height/width of the parent element if unspecified */
+div {
+  height: 100px;
+}
+
+section div {
+  background: turquoise;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+span {
+  display: block;
+}
+
+/* renders right to left */
+.inline-block {
+  display: inline-block;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.duck {
+  float: right;
+}
+
+.flm,
+.donut {
+  float: left;
+  clear: left;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}

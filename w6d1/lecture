@@ -1,0 +1,49 @@
+headline 2 is called h2 tag
+display is something you set?
+    types of boxes
+        
+        block
+            a div is a block 
+                tries to be as wide as possible?
+                content before and after box appear
+        inline
+            a span is a type of inline element: cannont adjust with height witdth or padding
+                allows other elements to sit to its left and right
+                cannot have a width and height
+                doesn't respect top/bottom
+                takes up as little space as possible
+        inline block
+            mix of other two can be sized with width or height
+            respects width heighht margin padding
+            allows other elements to sit to left or right
+    flex
+        goes on parent container going onto children
+        gives container ability to alter children
+        flexible way of managing the content position and size on a site
+        better than float or position
+        impacts all children
+
+        flex basics
+            want to add dislay: flex to parent element
+            specifiy what main asperiores
+            main access flex direction column
+            "swaps based on axis?"
+            align items moves vertically
+            unless flex directions
+            
+
+
+    Float: useful for print display 
+        left right non
+        clear: left right none both
+        removed from normal flow of page, but things float around it stil lin flow
+
+
+    CLearfix
+        if element floating outside of container
+        outdated especially and float in general have been replaced by flex
+
+
+    (orange refers to margin)
+
+    Why doesn't my inline-block work
