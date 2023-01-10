@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  password_digest :string
+#  session_token   :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
     validates_presence_of :username, :session_token
 
@@ -11,8 +22,13 @@ class User < ApplicationRecord
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
-        return nil unless user
-        user.is_password?(password) ? user : nil
+        if user && user.is_password?(password)
+            user
+        else
+            nil
+        end
+        # return nil unless user
+        # user.is_password?(password) ? user : nil
     end
 
     def password= (password)
@@ -22,6 +38,8 @@ class User < ApplicationRecord
     
     def is_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
+        # pw_object = BCrypt::Password.new(self.password_digest)
+        # pw_obhect.is_password?(password)
     end
 
     def generate_unique_seesion_token
@@ -31,6 +49,7 @@ class User < ApplicationRecord
     def reset_session_token!
         self.session_token = SecureRandom.urlsafe_base64(16)
         save!
+        self.session_token
     end
 
     def ensure_session_token

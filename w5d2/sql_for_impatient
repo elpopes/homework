@@ -1,0 +1,199 @@
+Database Schemas:
+Your database Schema is a description of the oragnization of your database in tables and columns.
+Designing your scheme is one ofthe frst and most imporatnt step when writing an application
+What data does my application need to function?
+
+Three things to decide when implementing a schema:
+What tables will I have
+Columns each of those will have
+Data type of each of those columns.
+
+Schemas are mutable.
+
+SQL is static typing. Common Data Types
+Boolean
+Int
+Float
+VARCHAR(255)
+TEXT
+DATE
+DATETIME
+TIME
+BLOB
+
+Modeling Relationships
+Relationships between entries are modeled through foreign keys:
+posts table:
+
+## id | title | body | user_id
+
+1 | 'XXXX' | 'xyz...' | 3
+2 | 'XXXX' | 'xyz...' | 5
+3 | 'XXXX' | 'xyz...' | 7
+4 | 'XXXX' | 'xyz...' | 10
+5 | 'XXXX' | 'xyz...' | 2
+6 | 'XXXX' | 'xyz...' | 5
+
+Seach all posts by user_id:
+
+SELECT \*
+FROM
+posts
+WHERE
+posts.user_id = 5
+
+Foreign keys are how we model relationships between pieces of data over tables
+Ensures data is not duplicated
+Posts live in a single place, users in another, and the foreign key (user_id)
+in posts expresses the relation between the one and the other.
+
+SQL is a DOMAIN SPECIFIC LANGUAGE (like RSPEC)
+sample:
+
+SELECT
+name, age, has_cats
+FROM
+tenants
+WHERE
+(has_cats = true AND age > 50)
+
+4 Main Data Manipulation Operators
+SELECT: retrieve values
+INSERT: insert a row
+UPDATE: update values
+DELETE: bye
+
+SELECT
+Structure:
+
+SELECT
+one or more columns (or all columns with \*)
+FROM
+one (or more tables, joined with JOIN)
+WHERE
+one (or more conditions, joined with AND/OR);
+Examples:
+
+SELECT
+
+- FROM
+  users
+  WHERE
+  name = 'Ned';
+
+SELECT
+account_number, account_type
+FROM
+accounts
+WHERE
+(customer_id = 5 AND account_type = 'checking');
+
+---
+
+INSERT
+Structure:
+
+INSERT INTO
+table name (column names)
+VALUES
+(values);
+Examples:
+
+INSERT INTO
+users (name, age, height_in_inches)
+VALUES
+('Santa Claus', 876, 34);
+
+INSERT INTO
+accounts (account_number, customer_id, account_type)
+VALUES
+(12345, 76, 'savings');
+
+---
+
+UPDATE
+Structure:
+
+UPDATE
+table_name
+SET
+col_name1 = value1,
+col_name2 = value2
+WHERE
+conditions
+Examples:
+
+UPDATE
+users
+SET
+name = 'Eddard Stark', house = 'Winterfell'
+WHERE
+name = 'Ned Stark';
+
+UPDATE
+accounts
+SET
+balance = 30
+WHERE
+id = 6;
+
+---
+
+DELETE
+Structure:
+
+DELETE FROM
+table_name
+WHERE
+conditions
+Examples:
+
+DELETE FROM
+users
+WHERE
+(name = 'Eddard Stark' AND house = 'Winterfell');
+
+DELETE FROM
+accounts
+WHERE
+customer_id = 666;
+
+---
+
+Before query define database schema.
+Three operators to manipulate database schema
+
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+
+Example of CREATE TABLE:
+
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+birth_date DATE,
+house VARCHAR(255),
+favorite_food VARCHAR(20)
+);
+
+---
+
+QUERY ACROSS TABLES:
+
+SELECT
+users.name, posts.title
+FROM
+posts
+JOIN
+users ON posts.user_id = users.id
+
+SELECT
+users.name, posts.title
+FROM
+posts
+JOIN
+likes ON posts.id = likes.post_id
+JOIN
+users ON likes.user_id = users.id
+This query will give a list of user names and the posts they have liked.

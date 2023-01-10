@@ -1,0 +1,2 @@
+  [1m[35m (1290.9ms)[0m  [1m[35mCREATE DATABASE "intro_to_rails_development" ENCODING = 'unicode'[0m
+  [1m[35m (1151.4ms)[0m  [1m[35mCREATE DATABASE "intro_to_rails_test" ENCODING = 'unicode'[0m

@@ -1,0 +1,127 @@
+Models
+
+    WHAT'S A MODEL?
+        each table in the database
+        an instance is a row
+        a template to create instances
+        a class that manages data, logic and rules
+        contains
+        inherits from ApplicationRecord < ActiveRecord
+
+    DB Constratints VS Model Validations
+        DB constraints are last line of defense
+        Validations creates two lines of defense and better user interface
+            fails softly "invalid password" versus ERROr:AHY@*&(*@(*Y@(u())))
+
+        Common Validations
+            validates :some_column, presence: true
+
+    WHAT'S RAILS?
+
+create a project: rails new BlueBird -G -T --database=postgresql --minimal
+A server side ModelViewsControllers web application framework
+Skeleton directory shipping pre-written ruby code
+larger abstraction of ... RAILS MAGIC
+
+Migrations
+In order to get DB to work: incremental and revesible changes made to a database schema, all app frameworks use migrations. Avoid writing raw sql.
+Only run once. Change structure. Never run it again. Will have a record of changes to db. Want a table, create a user... ONLY CHANGING SCHEMA. FIX DON'T undo.
+
+<!-- Given a resource, demonstrate how to create a new table in Rails. -->
+
+    CREATES BOTH THE MODEL AND THE TABLE
+    rails generate model Like
+
+<!-- create project -->
+
+rails new BlueBird -G -T --database=postgresql --minimal
+
+<!-- create db-->
+
+bundle exec rails db:create
+
+<!-- create table -->
+
+bundle exec rails generate migration CreateUsers
+
+<!-- create index -->
+
+<!-- change table -->
+
+rails generate migration AddAgeAndPAToUsers
+
+<!-- Identify the file that will show you the effect of all the migrations that have been run so far. -->
+
+   <!-- Identify the proper way to change the schema of a Rails application. -->
+
+    <!-- Given an existing Rails project, demonstrate how to change a column in a given table. -->
+
+    <!-- Given an existing Rails project, demonstrate how to add columns, indexes, and foreign key constraints to a given table. -->
+
+Associations
+Connection between two Active Record models
+how we do joins table
+methods we can call
+
+    <!-- Identify the role of associations in a Rails model. -->
+
+
+    <!-- Given a Rails project with two associated models, write belongs_to and has_many associations relating the two. -->
+    class Strike < ApplictaionRecord
+        belongs_to :student,
+            primary_key: :id,
+            foreign_key: :student_id,
+            class_name: :Student
+    end
+
+    belongs_to is an ActiveRecord method that takes the following arguments
+
+    def belongs_to(:name, options = {}) ... end
+
+
+    <!-- Identify which Rails model gets the belongs_to association. -->
+
+    <!-- Demonstrate knowledge of which variables to refer to for the primary_key, foreign_key, and class_name for each association. -->
+
+
+    <!-- Given a Rails project with models and a has_many or belongs_to association, write a has_many :through association to access data through another model. -->
+
+
+    belongs_to :user,
+        primary +key: :d,
+        ofreiegn
+
+    has_one
+
+    easiy confused with belongs_to
+    can only write them when have belongs_to
+
+    only has one if you want to return one active one not in array.
+
+
+    <!-- Identify the differences between a has_many :through and a has_one association. -->
+
+    <!-- Demonstrate when it is appropriate to add options such as dependent: :destroy and optional: true to an association. -->
+
+Active Record queries
+ACTIVE RECORD
+IS a class, it's an ORM Tool we'll be using in rails. Translating between SQL queries and ruby object
+
+knows a model is invalid if anything in error array
+
+    Given a Rails project, demonstrate how to write methods utilizing complex Active Record queries.
+
+
+    Use aggregates with Active Record.
+
+
+    Write Active Record queries using multiple where statements.
+
+
+    Write Active Record queries using group with columns defined in select.
+
+
+
+    Use the pluck method with Active Record to return ids.
+
+errors is an object

@@ -118,12 +118,18 @@ instance_variable_get('@secret')
 # Dog.define_sigleton_method(:total_dogs) do
 #     @@num_dogs
 # end
+class Rock
 
-
-def self.my_attr_reader(*names)
-    names.each do |name|
-        define_method(name) do
-            instance_variable_get("@#{name}")
+    def self.my_attr_reader(*names)
+        names.each do |name|
+            define_method(name) do
+                instance_variable_get("@#{name}")
+            end
         end
     end
+
+    def goes_up
+        puts "weee!"
+    end
+
 end

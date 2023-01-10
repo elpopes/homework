@@ -1,0 +1,201 @@
+RDBMS Rational DB MGMT System
+PostgreSQL (open source)
+SQLite (open source)
+SQL DSL (like HTML and RSPec)
+
+Access Data and BAsic Ops
+
+<!-- Given a database and a series of tables demonstrate the
+ability to return data from the given database by writing
+SQL query statements. -->
+
+ORDER OF OPERATIONS
+FROM
+JOIN
+WHERE
+conditional filter
+GROUP BY
+group by shared value
+HAVING
+filter further
+SELECT
+select specified data
+ORDER BY
+
+LIMIT/OFFSET
+limit or offset the results
+
+---
+
+\*for each type of possessions with more than 5 items
+show the tye and number of each
+
+SELECT
+type, COUNT(_) AS num_items
+FROM
+possessions
+GROUP BY
+type
+HAVING
+COUNT(_) > 5;
+
+---
+
+SUBQUERY EXAMPLE:
+_of the most common item, ist the ones that cost
+over $1000
+SELECT _ FROM possessions WHERE name IN (
+SELECT
+name
+FROM
+possessions
+GROUP BY
+name
+ORDER BY
+COUNT(\*) DESC
+LIMIT
+1
+) AND cost > 1000;
+
+subqueries can also be used in the FROM statement but must alias subquery
+
+_how many types of possessions have a total cost oer $200?
+SELECT
+count(_) AS num_types
+FROM (
+SELECT
+type
+FROM
+possessions
+GROUP BY
+type
+HAVING
+SUM(cost) > 200
+) AS pricey_possessions;
+
+\*who is the owner of the most expensive item?
+SELECT
+name
+FROM
+sf_instructors
+WHERE
+id = (
+SELECT
+owner_id
+FROM
+possessions
+ORDER BY
+cost DESC
+LIMIT
+1
+);
+
+<!-- Demonstrate how to use aggregates within a SQL query to aggregate data from rows and columns. -->
+
+Aggregate functions can be used within Select and Having
+Havings have to follow group by and always uses aggregate function
+Can use statements in the select not in group by when used in aggregate function
+COUNT; SUM; AVG; MIN; MAX
+Should use alias "AS"
+
+<!-- Demonstrate how to join three separate tables using a JOIN table by joining on a column. -->
+
+_get all the friendships between SF and NY instructors
+SELECT
+_
+FROM
+sf_instructors
+JOIN
+friendships ON sf_instructors.id = friendships.sf_id
+JOIN
+ny_instructors ON ny_instructors.id = friendships.ny_id;
+
+Joins when lots of data across many tables, join then pick and choose
+subqueries use less memory
+subqueries us more CPU than joins
+Not all sql engines have joins
+
+They combine data from multipl tables into one relation
+Usually use keys as the hinge
+JOIN
+Only returns rows that match each other. default
+LEFT JOIN
+returns all rows in table1
+FULL JOIN
+returns all rows
+
+Assessment: look for including to mean outer join
+SELECT
+sf_instructors.name
+count(possessions.name)
+FROM
+sf_instructors
+JOIN
+possessions ON id = owner_id;
+GROUP BY
+sf_instructors.name
+
+\*which SF instructor does not have any possessions?
+SELECT
+sf_inst.name AS sad
+FROM
+sf+instructors
+LEFT OUTER JOIN
+possessions ON id = owner_id;
+WHERE
+type IS NULL;
+
+<!-- Demonstrate how to solve more complicated problems using a SELF JOIN to extract multiple types of information from the same table. -->
+
+SELF JOIN
+join table to itself
+must alias the table name
+be descriptive
+
+\*get all of the the app academy instructors who are also pod leaders
+by joining table with itself can list pod leaders and instructors in
+same roll
+
+SELECT
+DISTINCT(pod_leaders.name)
+FROM
+sf_instructors AS instructors
+JOIN
+sf_instructors AS pod_leaders
+ON
+instructors.pod_leader_id = pos_leaders.id;
+
+<!-- Know the basic Postgres commands to interact with the Postgres API via your terminal. -->
+
+Write and execute function to handle DV connection
+Enter SQL queries into "heredocs" (multi-line strings)
+This is how you'll be writing SQL today (to run specs), but please also use the psql teminal...
+
+require 'pg'
+
+def execute(sql)
+connection = PG::Connection.open(dbname: 'lecture')
+query_result = connection.exec(sql).values
+connection.close
+
+    query_result
+
+end
+
+    execute(<<-SQL)
+        SELECT
+        *
+        FROM
+        sf_instructors;
+    SQL
+
+    query = <<-SQL
+        SELECT
+            *
+        FROM
+            app_academy;
+        SQL
+
+    execute(query)
+
+    execute("SELECT * FROM app_academy;")

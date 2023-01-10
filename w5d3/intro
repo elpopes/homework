@@ -1,0 +1,15 @@
+RM 
+    relational Model has primary key with col and rows
+R DB MGMT SYSTEM
+    Oracle; PSGRES;
+SQLITE3 
+    limited space, like a phone; not scalable
+DDL
+    DATA DEFINITION LANGUAGE
+        describes structure of tables
+DML
+    DATA MANIPULATION LANGUAGE
+    add edit and delete
+    SELECT, INSERT, UPDATE, DELETE
+    Create table and drop
+    

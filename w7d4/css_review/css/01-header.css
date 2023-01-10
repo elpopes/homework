@@ -1,0 +1,58 @@
+/* PHASE 1: Header */
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: #eee;
+  color: #fff;
+  border: 1px;
+}
+
+.header {
+  color: var(--white);
+  background-color: #f00;
+  border-bottom: 1px solid #aaa;
+}
+
+.header a {
+  display: block;
+  padding: 20px, 100px;
+  color: var(--light-gray);
+  text-decoration: none;
+}
+
+.header nav {
+  background-color: #f00;
+  width: 1220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--dark-gray);
+  margin: auto;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header nav li {
+  display: inline-block;
+  /* margin-right: 10px; */
+}
+
+.header nav a {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.header nav a:hover {
+  color: var(--red);
+}
+
+

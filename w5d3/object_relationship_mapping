@@ -1,0 +1,12 @@
+Object Relational Mapping
+ORM
+
+From play we can create a play class.
+
+class Play
+    ::all
+    #initialize(id, name, year, foreign_key)
+    #create
+    #update
+
+end

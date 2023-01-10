@@ -1,0 +1,15 @@
+Programming Paradigms
+    Imperative Programing: 
+    
+def imperative_odds(array)
+  idx = 0
+  odds = []
+  while (idx < array.length)
+    if array[idx].odd?
+      odds << array[idx]
+    end
+    i += 1
+  end
+  odds
+end
+

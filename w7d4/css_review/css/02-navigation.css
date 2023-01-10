@@ -1,0 +1,30 @@
+/* PHASE 2: Navigation */
+
+.header-logo {
+  display: flex;
+  justify-self: left;
+  border-right: 1px solid #aaa;
+}
+
+.header-logo:hover {
+}
+
+.header-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-list > li {
+  border-left: 1px solid #aaa;
+  display: flex;
+  text-align: center;
+  font-size: 6px;
+}
+
+.header-list > li:hover {
+  background-color: black;
+}
+
+.header-logo {
+  font-size: 6px;
+}

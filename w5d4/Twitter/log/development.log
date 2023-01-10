@@ -1,0 +1,2 @@
+  [1m[35m (1198.6ms)[0m  [1m[35mCREATE DATABASE "Twitter_development" ENCODING = 'unicode'[0m
+  [1m[35m (1140.7ms)[0m  [1m[35mCREATE DATABASE "Twitter_test" ENCODING = 'unicode'[0m

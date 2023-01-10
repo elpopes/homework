@@ -1,0 +1,27 @@
+<h1>Add book to Library!</h1>
+
+<!-- <%# action: url to send data %> <%# method: http method that we use %> -->
+
+<form action="/books" method="post">
+  <label for="title">Title</label>
+  <input id="title" type="text" name="book[title]" />
+
+  <label for="author">Author</label>
+  <input id="author" type="text" name="book[author]" />
+
+  <label for="year">Year</label>
+  <input id="year" type="text" name="book[year}" />
+
+  <select name="book[category]">
+    <option disabled selected>__Please Select__</option>
+    <option value="Fiction">Fiction</option>
+    <option value="Non-Fiction">Non-Fiction</option>
+    <option value="Memoir">Memoir</option>
+  </select>
+
+  <label for="description">Description</label>
+  <textarea name="book[description]"></textarea>
+  <!-- <input id="description" type="text" name="description" /> -->
+
+  <input type="submit" value="Add book to Library" />
+</form>
