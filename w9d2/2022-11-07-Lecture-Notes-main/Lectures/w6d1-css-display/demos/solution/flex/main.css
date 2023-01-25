@@ -1,0 +1,63 @@
+header {
+  display: none;
+}
+
+.pool {
+  background-image: url("pool.jpg");
+  background-size: cover;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  border: 20px solid gray;
+  display: flex; /* flex */
+  flex-direction: column; /* flex */
+}
+
+body {
+  margin: 0;
+}
+
+.sidewalk {
+  width: 100vw;
+  height: 200px;
+  background-color: rgb(207, 207, 207);
+}
+
+img {
+  opacity: 0.9;
+  height: 110px;
+}
+
+.flamingo,
+.donut {
+  border: 10px solid green;
+}
+
+.duck,
+.pineapple {
+  border: 10px solid blue;
+}
+
+/* flex */
+.duck-pineapple-container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  align-items: flex-end;
+  border: 10px solid red;
+}
+
+.flamingo-donut-sent-container{
+  display: flex;
+  flex-direction: row;
+  border: 10px solid orange;
+}
+
+.flamingo-donut-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flamingo-donut-sent-container p {
+  border: 10px solid black;
+}

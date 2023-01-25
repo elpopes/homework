@@ -1,0 +1,18 @@
+form {
+  background: whitesmoke;
+  border: 4px dotted purple;
+  margin: 0 auto;
+  color: blue;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+section {
+  margin-right: 50%;
+}
+
+/* feel free to do something nice with the styling, this is purely an example */

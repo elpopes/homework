@@ -9,3 +9,8 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// ReactDOM.render(
+//     React.StringMode>
+//     App name=Michael
+// )

@@ -1,0 +1,50 @@
+/* .descendant-selector p {
+  background-color: cornflowerblue;
+} */
+
+.child-selector > p {
+  background-color: red;
+}
+
+#mocha {
+  background-color: blanchedalmond;
+  font-weight: bold;
+}
+
+div#blue {
+  background-color: blue;
+}
+
+h3 ~ p { 
+  background-color: green;
+  /* font-family: Arial, Helvetica, sans-serif;
+  color: yellow; */
+}
+
+.highlight {
+  background: yellow;
+}
+
+/* 
+h1#title {
+  font-weight: 300;
+} */
+/* show p.highlight vs p .highlight */
+
+/* p .highlight {
+  background: orange;
+} */
+
+
+
+
+/* make it red! (add .red) */
+
+
+/* #blue.red {
+  background-color: red;
+} */
+
+/* .red {
+  background-color: red;
+} */

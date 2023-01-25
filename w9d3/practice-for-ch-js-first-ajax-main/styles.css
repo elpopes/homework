@@ -1,0 +1,29 @@
+#weather-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "London", sans-serif;
+}
+
+body {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+#temperature {
+}
+
+#temperature,
+#cloud-coverage,
+#wind-speed,
+#visibility {
+  color: #333;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
